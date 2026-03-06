@@ -24,5 +24,4 @@ jobs:
             git pull origin main
             docker stop my-nginx || true
             docker rm my-nginx || true
-            docker build -t my-nginx .
-            docker run -d -p 80:80 --name my-nginx my-nginx
+            docker run -d -p 80:80 --name my-nginx -v /home/ubuntu/my-site:/usr/share/nginx/html:ro nginx:latest
